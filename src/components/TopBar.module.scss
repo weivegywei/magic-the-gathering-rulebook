@@ -1,0 +1,18 @@
+@import '../variables.scss';
+
+.appBar {
+    display: flex;
+    z-index: 1201 !important;
+    background-color: $mainBlue !important;
+}
+
+.toolBar {
+    width: 1437px;
+}
+
+.home {
+    cursor: pointer;
+    margin-right: 60px;
+    width: 450px;
+}
+

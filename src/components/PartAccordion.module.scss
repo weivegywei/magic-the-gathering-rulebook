@@ -1,0 +1,25 @@
+@import '../variables.scss';
+
+.root {
+    width: '100%'
+}
+
+.accordion {
+    height: 54px
+}
+
+.heading {
+    font-size: 0.9375rem !important
+}
+
+.list {
+    padding: 0 !important
+}
+
+.button {
+    width: 288px !important;
+     &:focus {
+        background-color: $highlightBlue !important;
+        color: white !important;
+     }
+}

@@ -1,0 +1,28 @@
+.input {
+    width: 400px;
+    height: 35px;
+    border: none;
+    border-radius: 5px;
+    padding: 0 0 0 5px;
+    &:focus {
+      outline: none;
+    }
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.button {
+  background-color: white !important;
+  color: #003f9a !important;
+  margin-left: 20px !important;
+  height: 35px;
+  min-width: 40px !important;
+  padding: 6px !important;
+  &:disabled {
+    color:darkgray !important
+  }
+}

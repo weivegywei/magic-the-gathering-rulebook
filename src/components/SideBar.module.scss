@@ -1,0 +1,27 @@
+@import '../variables.scss';
+
+.drawer {
+    width: $drawerWidth !important;
+    flex-shrink: 0
+}
+
+.drawerPaper {
+    width: $drawerWidth;
+    z-index: 1200
+}
+
+.drawerContainer {
+    overflow-y: scroll;
+}
+
+.list {
+    padding: 0!important
+}
+
+.drawerItem {
+    font-size: 0.9375rem !important;
+    height: 52px;
+    &:focus {
+        background-color: $highlightBlue !important
+     }
+}
