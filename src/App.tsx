@@ -5,6 +5,8 @@ import { TopBarAndSideBar } from './components/TopBarAndSideBar';
 import { AppContext, useAppContext } from './AppContext';
 import { TextArea } from './components/TextArea';
 
+const apiUrl = 'https://my-wei-shopping-website-server.herokuapp.com/api/';
+
 export const AppWrapper = () => 
   <AppContext.Provider value={useAppContext()}>
     <App />
@@ -29,7 +31,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchRuleBook = async() => {
-      const res = await axios.get('other/rulebook');
+      const res = await axios.get(apiUrl + 'other/rulebook');
       if(res && res.data.body) {
         const doc = res.data.body;
         const newTableOfContents = doc.slice(doc.indexOf('Contents'), doc.indexOf('Credits') + 7);
