@@ -1,4 +1,4 @@
-import { ChangeEvent, useContext } from 'react';
+import { ChangeEvent, useContext, KeyboardEvent } from 'react';
 import styles from './SearchBox.module.scss'
 import { AppContext } from '../AppContext';
 import { ToggleBox } from './ToggleBox';
@@ -9,11 +9,17 @@ export const SearchBox = () => {
     const { form, input, button } = styles;
     const { text, search, setSearch, toggle, contents, setSearchResult } = useContext(AppContext);
     
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
-        setSearch(e.target.value)
-    }
+    const handleChange = (e: ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)
+    
     const capitalizing = (search: string) => 
         search.charAt(0).toUpperCase() + search.slice(1).toLowerCase()
+
+    const handleKeyDown = (e: KeyboardEvent<HTMLInputElement>) => {
+        if(e.keyCode === 13) {
+            handleSearch();
+            e.preventDefault();
+        }
+    }
 
     //search keyword in different scopes according to toggle type
     const handleSearch = () => {
@@ -35,6 +41,7 @@ export const SearchBox = () => {
                     placeholder={toggle === 'text' ? 'Search a keyword from selected chapter' : 
                         'Search a keyword in the book'}
                     onChange={handleChange}
+                    onKeyDown={handleKeyDown}
                 ></input>
                 <div >
                 <Button  className={button} disableElevation onClick={handleSearch}>
